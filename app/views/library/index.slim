@@ -1,6 +1,98 @@
-section.p-index.l-main
-  .l-left-column
-    h2 みんなのおすすめBOOKS
-      .p-recomended-books
-  .l-right-column
-    h2 みんなの本活状況
+section.l-main.l-main__index
+  .l-main__container
+    .l-main--2columns
+      h2.c-header2
+        | みんなのおすすめBOOKS
+      ol.c-list
+        li.c-list-item.c-list-item--large-padding
+          .l-flex-column.l-flex-col-1
+            = image_tag '', :class => 'u-fit-to-box'
+          .l-flex-column.l-flex-col-5
+            .l-flex-row.l-flex-row-1.l-flex-align-item-center
+              span.c-book__id
+                | No.0001
+              span.c-book__status.c-book__status--lending.c-book__status--fill
+                | 貸出中
+            .l-flex-column.l-flex-col-4
+              h3.c-book__title
+                | 女の一生
+              span.c-book__author
+                | モーパッサン
+            .l-flex-row.l-flex-row-1.l-flex-align-item-end
+              span.c-member__name
+                | 川上洋平さん
+              span.c-member__affiliate
+                | （営業チーム）
+        li.c-list-item.c-list-item--large-padding
+          .l-flex-column.l-flex-col-1
+            = image_tag '', :class => 'u-fit-to-box'
+          .l-flex-column.l-flex-col-5
+            .l-flex-row.l-flex-row-1.l-flex-align-item-center
+              span.c-book__id
+                | No.0002
+            .l-flex-column.l-flex-col-4
+              h3.c-book__title
+                | 人間とマンボウ
+              span.c-book__author
+                | モーパッサン
+            .l-flex-row.l-flex-row-1.l-flex-align-item-end
+              span.c-member__name
+                | 石井大輔さん
+              span.c-member__affiliate
+                | （法務チーム）
+        li.c-list-item.c-list-item--large-padding
+          .l-flex-column.l-flex-col-1
+            = image_tag '', :class => 'u-fit-to-box'
+          .l-flex-column.l-flex-col-5
+            .l-flex-row.l-flex-row-1.l-flex-align-item-center
+              span.c-book__id
+                | No.0003
+              span.c-book__status.c-book__status--lending.c-book__status--fill
+                | 貸出中
+            .l-flex-column.l-flex-col-4
+              h3.c-book__title
+                | 風にそよぐ葦
+              span.c-book__author
+                | 石川達三
+            .l-flex-row.l-flex-row-1.l-flex-align-item-end
+              span.c-member__name
+                | 尾崎渉さん
+              span.c-member__affiliate
+                | （経理第１チーム）
+    .l-main--2columns
+      h2.c-header2
+        | みんなの本活状況
+      ol.c-list
+        li.c-list-item
+          .l-flex-row.l-flex-row-2.l-flex-align-item-end
+            .l-flex-row.l-flex-row-1.l-flex-align-item-start
+              span.c-book__status.c-book__status--lending.c-book__status--border
+                | 貸出中
+            .l-float-right
+              span.c-activity__date
+                | 2016/05/01
+          .l-flex-row.l-flex-row-4
+            p.c-activity__message
+              | モーパッサンの「女の一生」が貸し出されました
+        li.c-list-item
+          .l-flex-row.l-flex-row-2.l-flex-align-item-end
+            .l-flex-row.l-flex-row-1.l-flex-align-item-start
+              span.c-book__status.c-book__status--returning.c-book__status--border
+                | 返却
+            .l-float-right
+              span.c-activity__date
+                | 2016/04/24
+          .l-flex-row.l-flex-row-4
+            p.c-activity__message
+              | 藤沢道郎の「物語イタリアの歴史―解体から統一まで」が返却されました
+        li.c-list-item
+          .l-flex-row.l-flex-row-2.l-flex-align-item-end
+            .l-flex-row.l-flex-row-1.l-flex-align-item-start
+              span.c-book__status.c-book__status--lending.c-book__status--border
+                | 貸出中
+            .l-float-right
+              span.c-activity__date
+                | 2016/04/11
+          .l-flex-row.l-flex-row-4
+            p.c-activity__message
+              | サン・テグジュペリの「人間の大地」が貸し出されました

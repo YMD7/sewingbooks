@@ -1,3 +1,6 @@
+// ----------------------------------------
+//                             + bitters +
+// ----------------------------------------
 // Typography
 $base-font-family: $helvetica;
 $heading-font-family: $base-font-family;
@@ -19,7 +22,10 @@ $base-z-index: 0;
 $blue: #477dca;
 $dark-gray: #333;
 $medium-gray: #999;
-$light-gray: #ddd;
+$light-gray: #eee;
+$super-light-gray: #f6f6f6;
+$status-color-lending: #FF6BD6;
+$status-color-returning: #A26BFF;
 
 // Font Colors
 $base-background-color: #fff;
@@ -33,3 +39,17 @@ $base-border: 1px solid $base-border-color;
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+
+
+// ----------------------------------------
+//                               + style +
+// ----------------------------------------
+// -- + size + -------------
+$STD: 6px;
+$WIDTH__l-main__index: $STD * 155; // 930px
+
+// -- + color + -------------
+$COLOR__c-site__logo-text: $base-font-color;
+$COLOR__c-site__logo-text--hover: #1DB8CA;
+$COLOR__c-header2: $base-font-color;

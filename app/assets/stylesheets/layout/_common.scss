@@ -1,0 +1,35 @@
+// ----------------------------------------
+//                              + common +
+// ----------------------------------------
+// -- + body + -------------
+html {
+  height: 100%;
+}
+body {
+  @include display(flex);
+  @include flex-direction(column);
+  height: 100%;
+}
+
+// -- + flexbox + -------------
+.l-flex-column { @include display(flex); @include flex-direction(column); }
+.l-flex-col-1 { @include flex(1); }
+.l-flex-col-2 { @include flex(2); }
+.l-flex-col-3 { @include flex(3); }
+.l-flex-col-4 { @include flex(4); }
+.l-flex-col-5 { @include flex(5); }
+.l-flex-col-6 { @include flex(6); }
+.l-flex-row { @include display(flex); @include flex-direction(row); }
+.l-flex-row-1 { @include flex(1); }
+.l-flex-row-2 { @include flex(2); }
+.l-flex-row-3 { @include flex(3); }
+.l-flex-row-4 { @include flex(4); }
+.l-flex-row-5 { @include flex(5); }
+.l-flex-row-6 { @include flex(6); }
+.l-flex-align-item-start { @include align-items(flex-start); }
+.l-flex-align-item-center { @include align-items(center); }
+.l-flex-align-item-end { @include align-items(flex-end); }
+.l-flex-align-item-baseline { @include align-items(baseline); }
+.l-flex-content-justify-start { @include justify-content(flex-start); }
+.l-flex-content-justify-center { @include justify-content(center); }
+.l-flex-content-justify-end { @include justify-content(flex-end); }

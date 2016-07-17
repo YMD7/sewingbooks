@@ -1,0 +1,20 @@
+// ----------------------------------------
+//                             + element +
+// ----------------------------------------
+// -- + list + -------------
+.c-list {
+  border: 1px solid $light-gray;
+  background-color: white;
+  padding: $STD * 1;
+}
+.c-list-item {
+  border-bottom: 1px solid $light-gray;
+  padding: $STD * 1;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+.c-list-item--large-padding {
+  padding: $STD * 2;
+}

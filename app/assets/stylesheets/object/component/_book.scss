@@ -1,0 +1,38 @@
+// ----------------------------------------
+//                                + book +
+// ----------------------------------------
+.c-book__id {
+  margin-right: $STD * 2;
+  font-size: $base-font-size * 0.8;
+}
+.c-book__title {
+  margin: $STD 0 2px;
+  font-size: $base-font-size * 1.4;
+  font-weight: normal;
+}
+.c-book__author {
+  margin: 0 0 $STD * 2;
+}
+.c-book__status {
+  border-radius: $STD * 0.5;
+  padding: 2px $STD;
+  font-size: $base-font-size * 0.6;
+}
+.c-book__status--lending {
+  background-color: $status-color-lending;
+  border-color: $status-color-lending;
+  color: $status-color-lending;
+}
+.c-book__status--returning {
+  background-color: $status-color-returning;
+  border-color: $status-color-returning;
+  color: $status-color-returning;
+}
+.c-book__status--fill {
+  color: white;
+  font-weight: bold;
+}
+.c-book__status--border {
+  border: 1px solid;
+  background-color: white;
+}

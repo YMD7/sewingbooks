@@ -1,0 +1,30 @@
+// ----------------------------------------
+//                                + main +
+// ----------------------------------------
+// -- + common + -------------
+.l-main {
+  @include flex(1);
+  background-color: $super-light-gray;
+  padding: ($STD * 8) 0 0;
+}
+.l-main__container {
+  width: $WIDTH__l-main__index;
+  margin: 0 auto;
+}
+.l-main--2columns {
+  &:first-child {
+    @include flex(4);
+  }
+  &:last-child {
+    @include flex(2);
+    margin-left: $STD * 8;
+  }
+}
+
+// -- + index + -------------
+.l-main__index {
+  .l-main__container {
+    @include display(flex);
+    @include flex-direction(row);
+  }
+}

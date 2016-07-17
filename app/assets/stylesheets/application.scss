@@ -12,7 +12,10 @@
 // Layout
 // ==========================================================================
 
-// @import "layout/";
+@import "layout/common";
+@import "layout/header";
+@import "layout/main";
+// @import "layout/footer";
 
 // ==========================================================================
 // Object
@@ -22,7 +25,11 @@
 // Component
 // -----------------------------------------------------------------
 
-// @import "object/component/";
+@import "object/component/element";
+@import "object/component/typography";
+@import "object/component/site";
+@import "object/component/book";
+@import "object/component/activity";
 
 // -----------------------------------------------------------------
 // Project
