@@ -4,7 +4,7 @@ gem 'rails', '4.0.5'
 
 gem 'sqlite3'
 
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails'
 
 gem 'uglifier', '>= 1.3.0'
 
@@ -29,9 +29,9 @@ gem "omniauth"
 gem "omniauth-twitter"
 gem "omniauth-facebook"
 gem "slim-rails"
-gem "bourbon"
-gem "neat"
-gem "bitters"
+gem "bourbon", '3.2.4'
+gem "neat", '1.5.1'
+gem "bitters", '1.0.0'
 gem "font-awesome-rails"
 group :development do
   gem "html2slim"
