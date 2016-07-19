@@ -2,7 +2,23 @@
 //                             + bitters +
 // ----------------------------------------
 // Typography
-$base-font-family: $helvetica;
+$yugothic: (
+  "游ゴシック",
+  YuGothic,
+  "ヒラギノ角ゴ ProN W3",
+  "Hiragino Kaku Gothic ProN",
+  "メイリオ",
+  Meiryo,
+  "Helvetica Neue",
+  Helvetica,
+  Arial,
+  sans-serif
+);
+@font-face {
+  font-family: $yugothic;
+  font-weight: 500;
+}
+$base-font-family: $yugothic;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
