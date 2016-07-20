@@ -33,3 +33,4 @@ body {
 .l-flex-content-justify-start { @include justify-content(flex-start); }
 .l-flex-content-justify-center { @include justify-content(center); }
 .l-flex-content-justify-end { @include justify-content(flex-end); }
+.l-flex-cc { @include align-items(center); @include justify-content(center); }

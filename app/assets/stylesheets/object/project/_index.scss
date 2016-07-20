@@ -1,0 +1,11 @@
+// ----------------------------------------
+//                               + index +
+// ----------------------------------------
+// -- + book list + -------------
+.p-index-books__list-item {
+  height: $WIDTH__p-index-books__list-item; // 140px
+}
+.p-index-books__icon-container {
+  background-color: beige;
+  @extend .u-margin-right__std-x3;
+}
