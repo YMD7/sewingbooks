@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   # book
   resources :books
 
+  # devise
+  devise_for :users
+
 end
