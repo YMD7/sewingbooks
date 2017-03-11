@@ -1,0 +1,43 @@
+= form_for @book, :url => { :action => 'create' }, :html => { :class => ["l-main__float-panel", "p-home__admin-register-user"], :style => "display:none;" } do |f|
+  .l-main__float-panel-control-buttons
+    button.l-main__float-panel-switch-button
+      | 本の登録
+    button.l-main__float-panel-close-button
+      = image_tag 'close-cross.svg'
+  .p-books__show-introduction-portlaits-wrapper
+    .p-books__show-person
+      .p-books__show-portlait
+        .p-books__show-portlait-image-container
+          .p-books__show-portlait-image-placeholder
+            i.fa.fa-user-plus
+            span
+            img
+          input type="file"
+      .p-books__show-name-outer
+        .p-books__show-name-label
+          | おすすめした人
+        .p-books__show-person-name-wrapper
+          input.p-books__show-portlaits-name type="text" placeholder="氏名"
+          span.p-books__show-person-name-san
+            | さん
+        input.p-books__show-relevant-name type="text" placeholder="所属名"
+    .p-books__show-book
+      .p-books__show-portlait
+        .p-books__show-portlait-image-container
+          .p-books__show-portlait-image-placeholder
+            i.fa.fa-file-image-o
+            span
+            img
+          input type="file"
+      .p-books__show-name-outer
+        span.p-books__show-name-label
+          | おすすめの本
+        = f.text_field :name,   :class => 'p-books__show-portlaits-name', :placeholder => "本の名前"
+        = f.text_field :author, :class => 'p-books__show-relevant-name',  :placeholder => "著者の名前"
+  .p-books__show-comment
+    .p-books__show-comment-body
+      = f.text_area :comment, :rows => 1, :placeholder => "コメントを記入"
+    .p-books__show-comment-date
+      = f.text_field :recommend_date, :value => Date.today.strftime('%Y/%m/%d'), :placeholder => "日付を記入"
+  .l-main__float-panel-submit-buttons-wrapper
+    input.l-main__float-panel-submit-buttons type="submit" value="登録する"

@@ -1,0 +1,11 @@
+// ----------------------------------------
+//                            + activity +
+// ----------------------------------------
+.c-activity__date {
+  color: gray;
+  font-size: $base-font-size * 0.8;
+}
+.c-activity__message {
+  padding: ($STD * 1) 0 0;
+  font-size: $base-font-size * 0.9;
+}

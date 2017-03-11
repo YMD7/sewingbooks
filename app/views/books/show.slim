@@ -1,0 +1,79 @@
+section.l-main.p-books__show
+  nav.l-main__local-navi
+    .l-main__local-navi-wrapper.l-wrapper
+      .l-main__local-navi-cell
+        = link_to '/', :class => 'c-navi__link-to-adjacent-books c-navi__link-to-prev-book l-flex-row l-flex-content-justify-start' do
+          .c-navi__local-navi-text-container.l-flex-column.l-flex-align-item-start
+            span.c-navi__local-navi-member-name-label
+              | 山田響さんのおすすめ本
+            span.c-navi__local-navi-book-name-label
+              | すべてがＦになる
+      .l-main__local-navi-cell.l-main__local-navi-link-to-top
+        = link_to 'トップページへ戻る', '/', :class => 'c-button__link-to c-button__link-to-top'
+      .l-main__local-navi-cell
+        = link_to '/', :class => 'c-navi__link-to-adjacent-books c-navi__link-to-next-book l-flex-row l-flex-content-justify-end' do
+          .c-navi__local-navi-text-container.l-flex-column.l-flex-align-item-end
+            span.c-navi__local-navi-member-name-label
+              | 石井大輔さんのおすすめ本
+            span.c-navi__local-navi-book-name-label
+              | ちょっとピンぼけ
+  .p-books__show-introduction.l-wrapper-narrow
+    .p-books__show-introduction-portlaits-wrapper
+      .p-books__show-person
+        .p-books__show-portlait
+          .p-books__show-portlait-image-container
+            = image_tag 'profile-image-sample1.jpg'
+        .p-books__show-name-outer
+          span.p-books__show-name-label
+            | おすすめした人
+          .p-books__show-person-name-wrapper
+            span.p-books__show-portlaits-name
+              | 川上洋平
+            span.p-books__show-person-name-san
+              | さん
+          span.p-books__show-relevant-name
+            | 第一営業部
+      .p-books__show-book
+        .p-books__show-portlait
+          .p-books__show-portlait-image-container
+            = image_tag 'book-portlait-sample.jpg'
+        .p-books__show-name-outer
+          span.p-books__show-name-label
+            | おすすめの本
+          span.p-books__show-portlaits-name
+            | 月と菓子パン
+          span.p-books__show-relevant-name
+            | 石田千
+    .p-books__show-comment
+      .p-books__show-comment-body
+        p
+          | いまの仕事に就くきっかけになった一冊です。
+      .p-books__show-comment-date
+        span
+          | 2016/05/04
+    .p-books__show-book-card
+      span.p-books__show-book-card-header
+        | 図書カード
+      table.p-books__show-book-card-table
+        thead
+          tr
+            th 貸出日
+            th 返却日
+            th 部署
+            th 氏名
+        tbody
+          tr
+            td 2016/05/04
+            td 2016/05/18
+            td 法務チーム
+            td 尾崎渉
+          tr
+            td 2016/05/04
+            td 2016/05/18
+            td 法務チーム
+            td 尾崎渉
+          tr
+            td 2016/05/04
+            td 2016/05/18
+            td 法務チーム
+            td 尾崎渉

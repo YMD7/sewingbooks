@@ -1,0 +1,178 @@
+// ----------------------------------------
+//                               + books +
+// ----------------------------------------
+// -- + common + -------------
+.p-books__show-introduction {
+  @include display(flex);
+  @include flex-direction(column);
+
+  margin-top: $STD * 12;
+}
+.p-books__show-introduction-portlaits-wrapper {
+  @include display(flex);
+  @include flex-direction(row);
+}
+.p-books__show-portlait {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+}
+.p-books__show-portlait-image-container {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+
+  background-color: #fff;
+  padding: $STD * 2;
+
+  > img {
+    max-width: $STD * 28;
+    max-height: $STD * 37;
+  }
+  > input[type="file"] {
+    display: none;
+  }
+}
+.p-books__show-portlait-image-placeholder {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(column);
+
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #333;
+  width: $STD * 28;
+  height: $STD * 37;
+  box-shadow: 0px 0px 0px 6px #666 inset;
+
+  &:hover {
+    > i {
+      color: lighten($action-color, 20%);
+      font-size: 360%;
+    }
+  }
+  > i {
+    color: #eee;
+    font-size: 300%;
+    @include transition(all 0.1s ease-in-out);
+  }
+  > i.fa-frown-o {
+    color: #ff6161;
+  }
+  > span {
+    color: #eee;
+    font-size: 12px;
+  }
+}
+.p-books__show-portlait-image-placeholder.is-previewing {
+  background-color: transparent;
+  box-shadow: none;
+}
+.p-books__show-name-outer {
+  @include display(flex);
+  @include justify-content(flex-start);
+  @include align-items(center);
+  @include flex-direction(column);
+
+  margin-top: $STD * 2.5;
+}
+.p-books__show-name-label {
+  font-size: 14px;
+}
+.p-books__show-person-name-wrapper {
+  @include display(flex);
+  @include align-items(flex-end);
+}
+.p-books__show-portlaits-name {
+  @include flex(1);
+  font-size: 24px;
+  text-align: center;
+}
+.p-books__show-relevant-name {
+  margin-top: $STD * 1.5;
+  font-size: 16px;
+  text-align: center;
+}
+
+// -- + person + -------------
+.p-books__show-person {
+  @include flex(1);
+  @include display(flex);
+  @include flex-direction(column);
+}
+.p-books__show-person-name-san {
+  margin-left: $STD;
+  font-size: 14px;
+}
+
+// -- + book + -------------
+.p-books__show-book {
+  @include flex(1);
+}
+
+// -- + comment + -------------
+.p-books__show-comment {
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  margin-top: $STD * 8;
+  padding: $STD * 1;
+}
+.p-books__show-comment-body {
+  padding: $STD * 8 $STD * 3 $STD * 3;
+
+  > p {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+.p-books__show-comment-date {
+  text-align: right;
+
+  > span {
+    font-size: 12px;
+  }
+}
+
+// -- + book card + -------------
+.p-books__show-book-card {
+  margin-top: $STD * 10;
+}
+.p-books__show-book-card-header {
+  display: block;
+  margin-bottom: $STD * 4;
+  font-size: 16px;
+  text-align: center;
+}
+.p-books__show-book-card-table {
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  background-color: #F4F5E9;
+  width: 80%;
+  margin: 0 auto;
+  padding: $STD * 2 $STD * 4 $STD * 4;
+  font-size: 14px;
+
+  th {
+    border-color: #d9dec0;
+    color: #606737;
+    font-weight: normal;
+    text-align: center;
+  }
+  tbody {
+    margin: 40px;
+
+    > tr:first-child > td {
+      padding-top: $STD * 3;
+    }
+  }
+  td {
+    padding: 0 $STD * 2;
+    color: #909861;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      text-align: center;
+    }
+  }
+}

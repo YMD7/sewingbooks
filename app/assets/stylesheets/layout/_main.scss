@@ -1,0 +1,117 @@
+// ----------------------------------------
+//                                + main +
+// ----------------------------------------
+// -- + common + -------------
+.l-main {
+  @extend .l-flex-col-1;
+  background-color: $super-light-gray;
+  padding-bottom: $STD * 10;
+}
+.l-main--2columns {
+  &:first-child {
+    @extend .l-flex-col-4;
+  }
+  &:last-child {
+    @extend .l-flex-col-2;
+    margin-left: $STD * 8;
+  }
+}
+
+// -- + local navi + -------------
+.l-main__local-navi {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(row);
+
+  background-color: #EDEDED;
+  width: 100%;
+  height: 100px;
+}
+.l-main__local-navi-wrapper {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(row);
+}
+.l-main__local-navi-cell {
+  @include flex(1);
+}
+.l-main__local-navi-link-to-top {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(row);
+}
+
+// -- + float panel + -------------
+.l-main__float-panel-overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 120%;
+}
+.l-main__float-panel {
+  @include display(flex);
+  @include flex-direction(column);
+
+  position: fixed;
+  z-index: 2;
+  background-color: #f9f9f9;
+  width: $SIZE__l-wrapper-narrow + ($STD * 10);
+  padding: ($STD * 7) ($STD * 5);
+  box-shadow: 0px 0px 0px 6px gainsboro inset;
+}
+.l-main__float-panel-control-buttons {
+  @include display(flex);
+  @include justify-content(space-between);
+
+  position: relative;
+  top: $STD * -15;
+}
+.l-main__float-panel-switch-button {
+  position: relative;
+  right: $STD * 5;
+  border-radius: 0;
+  background-color: #c5b922;
+  @include transition(background-color 0.1s ease-in-out);
+
+  &:hover {
+    background-color: darken(#c5b922, 10%);
+  }
+}
+.l-main__float-panel-close-button {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+
+  position: relative;
+  left: $STD * 5;
+  border-radius: 0;
+  background-color: #000;
+  width: $STD * 8;
+  height: $STD * 8;
+  padding: 0;
+
+  &:hover {
+    > img {
+      width: 57%;
+    }
+  }
+  > img {
+    width: 40%;
+    margin: 0 auto;
+    @include transition(width 0.1s ease-in-out);
+  }
+}
+.l-main__float-panel-submit-buttons-wrapper {
+  @include display(flex);
+  @include justify-content(flex-end);
+  @include align-items(flex-start);
+  @include flex-direction(row);
+
+  padding: $STD * 3 0 0;
+}

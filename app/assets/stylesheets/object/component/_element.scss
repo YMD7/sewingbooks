@@ -1,0 +1,156 @@
+// ----------------------------------------
+//                             + element +
+// ----------------------------------------
+// -- + button + -------------
+.c-button {
+  border: 1px solid transparent;
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0.63em 1.70em;
+  color: inherit;
+  font-weight: normal;
+  @include transition(all 0.2s ease-in-out);
+
+  &:active, &:focus, &:hover {
+    border-color: #aaa;
+    background-color: #fff;
+    color: inherit;
+  }
+}
+.c-button__link-to {
+  @extend .c-button;
+
+  border-color: rgba(255, 255, 255, 0.0);
+  background-color: #fff;
+  color: $base-font-color;
+}
+
+// -- + list + -------------
+.c-list {
+  overflow: hidden;
+  border: 1px solid $light-gray;
+  background-color: white;
+  padding: $STD * 1;
+}
+.c-list__list-item {
+  border-top:    1px solid transparent;
+  border-right:  1px solid transparent;
+  border-left:   1px solid transparent;
+  border-bottom: 1px solid $light-gray;
+  @include transition(all 0.15s ease-out);
+
+  &:last-child {
+    border-bottom: none;
+  }
+  &:hover {
+    border: 1px solid $medium-gray;
+  }
+}
+.c-list__list-item-inner {
+  @include display(flex);
+
+  position: relative;
+  padding: $STD * 1;
+  color: $base-font-color;
+  @include transition(all 0.65s ease-in);
+
+  &:hover, &:active, &:focus {
+    color: inherit;
+
+    .c-list__list-hidden-menu {
+      opacity: 1;
+    }
+  }
+}
+.c-list__list-item-inner-flex-row {
+  @include flex-direction(row);
+}
+.c-list__list-item-inner-flex-column {
+  @include flex-direction(column);
+}
+.c-list__list-item-inner--large-padding {
+  padding: $STD * 2;
+}
+.c-list__list-hidden-menu {
+  @include flex(1);
+  @include display(flex);
+  @include justify-content(center);
+
+  position: relative;
+  opacity: 0;
+  background-color: #eee;
+  @include transition(all 0.40s $ease-out-sine);
+
+  &:hover {
+    background-color: #f9f9f9;
+
+    &::after {
+      opacity: 1;
+      top: 6%;
+      left: 7%;
+      width: 82%;
+      height: 86%;
+    }
+  }
+}
+.c-list__list-hidden-menu::after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  @include transition(all 0.15s ease-out);
+}
+.c-list__list-hidden-menu-lending::after {
+  border: 1px solid $status-color-returning;
+}
+.c-list__list-hidden-menu-returning::after {
+  border: 1px solid $status-color-lending;
+}
+.c-list__list-hidden-menu-item {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+
+  margin: 0;
+  font-size: 14px;  
+}
+
+// -- + navigation + -------------
+.l-main__local-navi-wrapper {
+  > .l-main__local-navi-cell {
+    &:first-child, &:last-child {
+      border-bottom: 1px solid transparent;
+      padding: 0.3em 0;
+      @include transition(all 0.2s ease-in-out);
+
+      &:hover {
+        border-bottom: 1px solid #ccc;
+        color: #045DF9;
+      }
+    }
+  }
+}
+.c-navi__link-to-adjacent-books {
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: $base-font-color;
+}
+.c-navi__link-to-prev-book {
+  background-image: image-url("arrow-to-left-thin.svg");
+  background-position: left;
+  padding-left: $STD * 6;
+}
+.c-navi__link-to-next-book {
+  background-image: image-url("arrow-to-right-thin.svg");
+  background-position: right;
+  padding-right: $STD * 6;
+}
+.c-navi__local-navi-member-name-label {
+  font-size: 12px;
+}
+.c-navi__local-navi-book-name-label {
+  font-size: 17px;
+}

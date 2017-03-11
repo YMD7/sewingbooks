@@ -1,0 +1,57 @@
+// ----------------------------------------
+//                               + home +
+// ----------------------------------------
+// -- + book list + -------------
+.p-home {
+  padding: ($STD * 8) 0 0;
+}
+.p-home__button-show-register-book-panel {
+  border: 1px solid #eee;
+  background-color: #fff;
+  margin-left: auto;
+  padding: ($STD * 1) ($STD * 3);
+  font-size: 12px;
+}
+.p-index-books__list-item {
+  height: $WIDTH__p-index-books__list-item; // 140px
+}
+.p-index-books__icon-container {
+  background-color: beige;
+  @extend .u-margin-right__std-x3;
+}
+
+// -- + admin register book + -------------
+.p-home__admin-register-book {
+  .p-books__show-portlaits-name,
+  .p-books__show-relevant-name,
+  .p-books__show-comment-date > input {
+    border-top: transparent;
+    border-right: transparent;
+    border-bottom: 1px solid #eee;
+    border-left: transparent;
+    margin: 0;
+    padding: 1px;
+    text-align: center;
+    box-shadow: none;
+  }
+  .p-books__show-portlaits-name {
+    width: 10em;
+    font-size: 24px;
+  }
+  .p-books__show-relevant-name {
+    width: 12em;
+    margin-top: 9px;
+    font-size: 16px;
+  }
+  .p-books__show-comment-date > input {
+    width: 6em;
+    margin-left: auto;
+    font-size: 12px;
+    text-align: center;
+  }
+  .p-books__show-comment-body > textarea {
+    padding: 1em 0.5em;
+    font-size: 20px;
+    text-align: center;
+  }
+}

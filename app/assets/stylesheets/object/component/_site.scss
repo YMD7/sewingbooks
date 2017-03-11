@@ -1,0 +1,26 @@
+// ----------------------------------------
+//                                + site +
+// ----------------------------------------
+// -- + logo + -------------
+.c-site__logo {
+  text-align: center;
+}
+.c-site__logo-text {
+  color: $COLOR__c-site__logo-text;
+  font-size: $base-font-size * 1.6;
+
+  &:hover {
+    color: $COLOR__c-site__logo-text--hover;
+  }
+}
+
+// -- + company + -------------
+.c-member__name {
+  margin-right: $STD * 1;
+  color: gray;
+  font-size: $base-font-size;
+}
+.c-member__affiliate {
+  color: gray;
+  font-size: $base-font-size * 0.8;
+}
