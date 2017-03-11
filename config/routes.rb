@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :books
 
   # devise
-  devise_for :users
+  devise_for :users,
+    :controllers => { :invitations => 'users/invitations' }
 
 end
