@@ -1,0 +1,28 @@
+version: '2'
+services:
+  data:
+    image: busybox
+    volumes:
+      - /share
+    command:
+      - /bin/sh
+  nginx:
+    image: nginx
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
+    volumes_from:
+      - data
+    ports:
+      - '80:8080'
+  app:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    volumes_from:
+      - data
+      - bundle
+  bundle:
+    image: busybox
+    volumes:
+      - /usr/src/app/vendor/bundle
+
