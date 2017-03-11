@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  author: MyString
+  status: MyString
+  recommended_by: 1
+  cooment: MyString
+  recommended_date: 2017-03-11
+
+two:
+  name: MyString
+  author: MyString
+  status: MyString
+  recommended_by: 1
+  cooment: MyString
+  recommended_date: 2017-03-11
