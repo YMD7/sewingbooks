@@ -1,6 +1,7 @@
 class LibraryController < ApplicationController
   def index
     @book = Book.new
+    @user = User.new
   end
 
   def create
