@@ -29,7 +29,7 @@
     max-width: $STD * 28;
     max-height: $STD * 37;
   }
-  > input[type="file"] {
+  > input {
     display: none;
   }
 }

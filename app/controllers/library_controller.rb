@@ -4,6 +4,7 @@ class LibraryController < ApplicationController
   def index
     @book = Book.new
     @user = User.new
+    @users = User.all
   end
 
   def create
@@ -13,7 +14,7 @@ class LibraryController < ApplicationController
     when 'user' then
       result = create_user
     end
-    
+
     if result
       redirect_to action: 'index', :notice => "#{@type}の追加に成功"
     else

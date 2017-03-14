@@ -54,4 +54,52 @@
     font-size: 20px;
     text-align: center;
   }
+  .p-book__search-person-container {
+    position: absolute;
+    bottom: $STD * 6;
+    background: rgba(10,10,10,0.8);
+    width: 100%;
+    height: $STD * 56;
+    padding: $STD * 2;
+  }
+  .p-book__search-person-list {
+    @include display(flex);
+    @include justify-content(space-around);
+    @include align-content(flex-start);
+    @include flex-wrap(wrap);
+    overflow: scroll;
+    height: 100%;
+  }
+  .p-book__search-person-list-item {
+    @include display(flex);
+    cursor: pointer;
+    background: #222;
+    width: 48%;
+    margin-bottom: $STD * 2;
+    color: #fff;
+    @include transition(all 0.1s linear);
+
+    &:hover {
+      background: #567a88;
+    }
+  }
+  .p-book__search-person-image-container {
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    overflow: hidden;
+    width: $STD * 15;
+    height: $STD * 18;
+  }
+  .p-book__search-person-image {
+    max-width: $STD * 11;
+    max-height: $STD * 14;
+  }
+  .p-book__search-person-text-container {
+    @include flex(1);
+    @include display(flex);
+    @include flex-direction(column);
+    padding-top: $STD * 2;
+    font-size: 14px;
+  }
 }
