@@ -56,10 +56,10 @@
   }
   .p-book__search-person-container {
     position: absolute;
-    bottom: $STD * 6;
+    bottom: 0;
     background: rgba(10,10,10,0.8);
     width: 100%;
-    height: $STD * 56;
+    height: $STD * 62;
     padding: $STD * 2;
   }
   .p-book__search-person-list {
