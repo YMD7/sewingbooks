@@ -54,12 +54,20 @@
     font-size: 20px;
     text-align: center;
   }
-  .p-book__search-person-container {
+  .p-book__search-person-wrapper {
+    @include display(flex);
+    @include flex-direction(column);
+
     position: absolute;
     bottom: 0;
-    background: rgba(10,10,10,0.8);
     width: 100%;
-    height: $STD * 62;
+    height: $STD * 64;
+  }
+  .p-book__search-person-container {
+    @include flex(1);
+
+    position: relative;
+    background: rgba(10,10,10,0.8);
     padding: $STD * 2;
   }
   .p-book__search-person-list {
@@ -82,6 +90,12 @@
     &:hover {
       background: #567a88;
     }
+    &:active {
+      background: #2cbef7;
+    }
+  }
+  .p-book__search-person-id {
+    display: none;
   }
   .p-book__search-person-image-container {
     @include display(flex);

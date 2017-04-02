@@ -1,26 +1,25 @@
-= form_for @book, :url => { :action => 'create' }, :html => { :class => ["l-main__float-panel", "p-home__admin-register-book"], :style => "display: _none;" } do |f|
+= form_for @book, :url => { :action => 'create' }, :html => { :class => ["l-main__float-panel", "p-home__admin-register-book"], :style => "display: none;" } do |f|
   .l-main__float-panel-control-buttons
     button.l-main__float-panel-switch-button
       | ユーザーの登録
-    button.l-main__float-panel-close-button
+    button.l-main__float-panel-close-button.c-button__panel-close
       = image_tag 'close-cross.svg'
   .l-main__float-panel-wrapper
     .p-books__show-introduction-portlaits-wrapper
       .p-books__show-person
+        input.p-books__persion-id type="hidden"
         .p-books__show-portlait
           .p-books__show-portlait-image-container
             .p-books__show-portlait-image-placeholder
               i.fa.fa-user-plus
-              span
-            input type="text"
         .p-books__show-name-outer
           .p-books__show-name-label
             | おすすめした人
           .p-books__show-person-name-wrapper
-            input.p-books__show-portlaits-name type="text" placeholder="氏名"
+            input.p-books__show-portlaits-name type="text" placeholder="氏名" readonly="readonly"
             span.p-books__show-person-name-san
               | さん
-          input.p-books__show-relevant-name type="text" placeholder="所属名"
+          input.p-books__show-relevant-name type="text" placeholder="所属名" readonly="readonly"
       .p-books__show-book
         .p-books__show-portlait
           .p-books__show-portlait-image-container
@@ -41,12 +40,17 @@
         = f.text_field :recommend_date, :value => Date.today.strftime('%Y/%m/%d'), :placeholder => "日付を記入"
     .l-main__float-panel-submit-buttons-wrapper
       input.l-main__float-panel-submit-buttons type="submit" value="登録する"
-  .p-book__search-person-container
-    ul.p-book__search-person-list
-      - @users.each_with_index do |u, i|
-        li.p-book__search-person-list-item
-          .p-book__search-person-image-container
-            = image_tag "profile-image-sample#{(i+1)%3}", :class => 'p-book__search-person-image'
-          .p-book__search-person-text-container
-            span =u.name
-            span =u.dept
+  .p-book__search-person-wrapper style="opacity:0;bottom:-1000px;"
+    .l-main__search-person-container-control-buttons
+      button.c-button__panel-close
+        = image_tag 'arrow-to-down-double-thin.svg'
+    .p-book__search-person-container
+      ul.p-book__search-person-list
+        - @users.each_with_index do |u, i|
+          li.p-book__search-person-list-item
+            span.p-book__search-person-id =u.id
+            .p-book__search-person-image-container
+              = image_tag "profile-image-sample#{(i+1)%3}", :class => 'p-book__search-person-image'
+            .p-book__search-person-text-container
+              span =u.name
+              span =u.dept

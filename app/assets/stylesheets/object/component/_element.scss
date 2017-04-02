@@ -24,6 +24,24 @@
   background-color: #fff;
   color: $base-font-color;
 }
+.c-button__panel-close {
+  border-radius: 0;
+  background-color: #000;
+  width: $STD * 8;
+  height: $STD * 8;
+  padding: 0;
+
+  &:hover {
+    > img {
+      width: 57%;
+    }
+  }
+  > img {
+    width: 40%;
+    margin: 0 auto;
+    @include transition(width 0.1s ease-in-out);
+  }
+}
 
 // -- + list + -------------
 .c-list {

@@ -112,6 +112,54 @@ ready = ->
 
   $('.p-books__show-portlait-image-placeholder').on 'click', ->
     $(this).siblings('input[type="file"]').click()
+
+  togglePersonFinder = (e) ->
+    panel   = $('.p-book__search-person-wrapper')
+    classes = panel.attr('class')
+    isShow  = classes.split(' ').indexOf('is-show')
+    
+    if isShow > 0
+      # 表示中のとき
+      panel.animate({
+        bottom: '-1000px',
+        opacity: 0
+      }, 300).removeClass('is-show')
+    else
+      # 非表示のとき
+      panel.animate({
+        bottom: '0px',
+        opacity: 1
+      }, 300, ->
+        panel.addClass('is-show')
+      )
+
+  $('.p-books__show-person .p-books__show-portlait-image-container').on 'click', (e) ->
+    togglePersonFinder(e)
+
+  $('.l-main__search-person-container-control-buttons .c-button__panel-close').on 'click', (e) ->
+    e.preventDefault()
+    togglePersonFinder(e)
+
+  selectThePerson = (e) ->
+    # 名前と部署の取得
+    clickedItem = $(e.target).parents('.p-book__search-person-list-item')
+    id   = clickedItem.children('.p-book__search-person-id').text()
+    textContainer = clickedItem.children('.p-book__search-person-text-container')
+    name = textContainer.children('span:first-child').text()
+    dept = textContainer.children('span:last-child').text()
+
+    # ターゲットに情報を設定
+    $('.p-books__persion-id').val(id)
+    $('.p-books__show-person .p-books__show-portlaits-name').val(name)
+    $('.p-books__show-person .p-books__show-relevant-name').val(dept)
+    $('.p-books__show-person .p-books__show-portlait-image-placeholder').css({
+      'opacity': 0,
+      'background-image': 'url("/assets/profile-image-sample1")',
+      'box-shadow': 'none'
+    }).animate({'opacity': 1}, 300).children('i.fa').css('display', 'none')
+    
+  $('.p-book__search-person-list-item').on 'click', (e) ->
+    selectThePerson(e)
     
 # ==========================================================================
 if location.pathname.match('')

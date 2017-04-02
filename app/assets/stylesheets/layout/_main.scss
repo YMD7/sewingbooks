@@ -87,22 +87,6 @@
   @include align-items(center);
 
   position: relative;
-  border-radius: 0;
-  background-color: #000;
-  width: $STD * 8;
-  height: $STD * 8;
-  padding: 0;
-
-  &:hover {
-    > img {
-      width: 57%;
-    }
-  }
-  > img {
-    width: 40%;
-    margin: 0 auto;
-    @include transition(width 0.1s ease-in-out);
-  }
 }
 .l-main__float-panel-wrapper {
   padding: ($STD * 7) ($STD * 5);
@@ -114,4 +98,10 @@
   @include flex-direction(row);
 
   padding: $STD * 3 0 0;
+}
+.l-main__search-person-container-control-buttons {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(row);
 }
