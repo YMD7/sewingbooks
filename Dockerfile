@@ -12,8 +12,6 @@ RUN \
   yum -y install libjpeg-devel libpng-devel && \
   yum -y install ImageMagick ImageMagick-devel
 
-RUN rm -rf /var/lib/apt/lists/*
-
 COPY Gemfile      $APP_ROOT
 COPY Gemfile.lock $APP_ROOT
 

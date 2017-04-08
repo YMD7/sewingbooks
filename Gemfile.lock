@@ -51,6 +51,10 @@ GEM
       thor
     builder (3.2.3)
     byebug (9.0.6)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -186,6 +190,7 @@ GEM
       ffi (>= 0.5.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rmagick (2.16.0)
     sass (3.2.19)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -247,6 +252,7 @@ DEPENDENCIES
   bitters (= 1.0.0)
   bourbon (= 3.2.4)
   byebug
+  carrierwave
   coffee-rails (~> 4.2)
   devise
   devise_invitable
@@ -265,6 +271,7 @@ DEPENDENCIES
   pry-stack_explorer
   puma (~> 3.0)
   rails (~> 5.0.2)
+  rmagick
   sass-rails (~> 5.0)
   slim-rails
   spring
@@ -277,4 +284,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.3
+   1.14.6

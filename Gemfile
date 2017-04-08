@@ -49,6 +49,8 @@ gem 'font-awesome-rails'
 group :development do
   gem 'html2slim'
 end
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'pry-rails'
