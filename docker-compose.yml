@@ -6,14 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/usr/src/app
-    volumes_from:
-      - bundle
     stdin_open: true
     tty: true
     ports:
       - '3000:3000'
-  bundle:
-    image: busybox
-    volumes:
-      - /usr/src/app/vendor/bundle
-

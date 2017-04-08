@@ -1,14 +1,18 @@
-FROM ruby:2.4.0
+FROM ymd7/centos7-ruby:2.4.1
 
 ENV APP_ROOT /usr/src/app
 
 WORKDIR $APP_ROOT
 
 RUN \
-  apt-get update && \
-  apt-get install -y nodejs \
-                     --no-install-recommends && \
-  rm -rf /var/lib/apt/lists/*
+  yum -y update && \
+  yum -y install epel-release
+RUN \
+  yum -y install nodejs sqlite-devel && \
+  yum -y install libjpeg-devel libpng-devel && \
+  yum -y install ImageMagick ImageMagick-devel
+
+RUN rm -rf /var/lib/apt/lists/*
 
 COPY Gemfile      $APP_ROOT
 COPY Gemfile.lock $APP_ROOT
@@ -16,9 +20,8 @@ COPY Gemfile.lock $APP_ROOT
 RUN \
   echo 'install: --no-document' >> ~/.gemrc && \
   echo 'update: --no-document' >> ~/.gemrc && \
-  bundle config --global build.nokogiri --use-system-libraries && \
+  gem install nokogiri && \
   bundle config --global jobs 4 && \
-  bundle config --global path vendor/bundle && \
   bundle install
 
 COPY . $APP_ROOT
