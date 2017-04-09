@@ -1,8 +1,10 @@
 class BookCoverUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+
+  process convert: 'png'
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -11,7 +13,7 @@ class BookCoverUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -23,7 +25,7 @@ class BookCoverUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process scale: [200, 300]
+  process resize_to_fit: [600, 800]
   #
   # def scale(width, height)
   #   # do something
@@ -42,9 +44,9 @@ class BookCoverUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    "cover-image.png" if original_filename
+  end
 
   # Blacklist to reject content types
   def content_type_blacklist

@@ -51,6 +51,7 @@ class LibraryController < ApplicationController
         :recommended_by,
         :comment,
         :recommend_date,
+        :book_cover,
       )
     end
 
