@@ -24,7 +24,7 @@ class LibraryController < ApplicationController
 
   def create_user
     p = params[:user]
-    @user = User.invite!({"email"=>"user@sample.mail", "name"=>p[:name], "dept"=>p[:dept], "role"=>p[:role]}) do |u|
+    @user = User.invite!({"email"=>"user@sample.mail", "name"=>p[:name], "dept"=>p[:dept], "role"=>p[:role], "portrait"=>p[:portrait]}) do |u|
       u.skip_invitation = true
     end
     token = Devise::VERSION >= "3.1.0" ? @user.instance_variable_get(:@raw_invitation_token) : @user.invitation_token
@@ -60,6 +60,7 @@ class LibraryController < ApplicationController
         :name,
         :dept,
         :role,
+        :portrait,
       )
     end
 end
