@@ -27,7 +27,7 @@
               i.fa.fa-file-image-o
               span
               img
-            input type="file"
+            = f.file_field :book_cover
         .p-books__show-name-outer
           span.p-books__show-name-label
             | おすすめの本
@@ -37,7 +37,7 @@
       .p-books__show-comment-body
         = f.text_area :comment, :rows => 1, :placeholder => "コメントを記入"
       .p-books__show-comment-date
-        = f.text_field :recommend_date, :value => Date.today.strftime('%Y/%m/%d'), :placeholder => "日付を記入"
+        = f.text_field :recommended_date, :value => Date.today.strftime('%Y/%m/%d'), :placeholder => "日付を記入"
     .l-main__float-panel-submit-buttons-wrapper
       input.l-main__float-panel-submit-buttons type="submit" value="登録する"
   .p-book__search-person-wrapper style="opacity:0;bottom:-1000px;"
