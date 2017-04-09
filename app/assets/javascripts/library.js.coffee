@@ -113,7 +113,7 @@ ready = ->
   $('.p-books__show-portlait-image-placeholder').on 'click', ->
     $(this).siblings('input[type="file"]').click()
 
-  togglePersonFinder = (e) ->
+  togglePersonFinder = () ->
     panel   = $('.p-book__search-person-wrapper')
     classes = panel.attr('class')
     isShow  = classes.split(' ').indexOf('is-show')
@@ -134,11 +134,11 @@ ready = ->
       )
 
   $('.p-books__show-person .p-books__show-portlait-image-container').on 'click', (e) ->
-    togglePersonFinder(e)
+    togglePersonFinder()
 
   $('.l-main__search-person-container-control-buttons .c-button__panel-close').on 'click', (e) ->
     e.preventDefault()
-    togglePersonFinder(e)
+    togglePersonFinder()
 
   selectThePerson = (e) ->
     # 名前と部署の取得
@@ -160,6 +160,7 @@ ready = ->
     
   $('.p-book__search-person-list-item').on 'click', (e) ->
     selectThePerson(e)
+    togglePersonFinder()
     
 # ==========================================================================
 if location.pathname.match('')
