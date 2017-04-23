@@ -1,4 +1,4 @@
-= form_for @book, :url => { :action => 'create' }, :html => { :class => ["l-main__float-panel", "p-home__admin-register-book"], :style => "display: none;" } do |f|
+= form_for @book, :url => { :action => 'create' }, :html => { :class => ["l-main__float-panel", "p-home__admin-register-book"], :style => "display: none_;" } do |f|
   .l-main__float-panel-control-buttons
     button.l-main__float-panel-switch-button
       | ユーザーの登録
@@ -50,7 +50,7 @@
           li.p-book__search-person-list-item
             span.p-book__search-person-id =u.id
             .p-book__search-person-image-container
-              = image_tag "profile-image-sample#{(i+1)%3}", :class => 'p-book__search-person-image'
+              = image_tag "#{u.portrait}", :class => 'p-book__search-person-image'
             .p-book__search-person-text-container
               span =u.name
               span =u.dept

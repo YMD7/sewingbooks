@@ -66,14 +66,14 @@
   .p-book__search-person-container {
     @include flex(1);
 
+    overflow: hidden;
     position: relative;
     background: rgba(10,10,10,0.8);
     padding: $STD * 2;
   }
   .p-book__search-person-list {
     @include display(flex);
-    @include justify-content(space-around);
-    @include align-content(flex-start);
+    @include justify-content(space-between);
     @include flex-wrap(wrap);
     overflow: scroll;
     height: 100%;
@@ -82,7 +82,7 @@
     @include display(flex);
     cursor: pointer;
     background: #222;
-    width: 48%;
+    width: 49.1%;
     margin-bottom: $STD * 2;
     color: #fff;
     @include transition(all 0.1s linear);
