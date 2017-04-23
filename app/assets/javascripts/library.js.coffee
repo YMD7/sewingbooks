@@ -144,6 +144,8 @@ ready = ->
     # 名前と部署の取得
     clickedItem = $(e.target).parents('.p-book__search-person-list-item')
     id   = clickedItem.children('.p-book__search-person-id').text()
+    image = clickedItem.find('.p-book__search-person-image')
+    imageUrl = image.attr("src")
     textContainer = clickedItem.children('.p-book__search-person-text-container')
     name = textContainer.children('span:first-child').text()
     dept = textContainer.children('span:last-child').text()
@@ -154,9 +156,8 @@ ready = ->
     $('.p-books__show-person .p-books__show-relevant-name').val(dept)
     $('.p-books__show-person .p-books__show-portlait-image-placeholder').css({
       'opacity': 0,
-      'background-image': 'url("/assets/profile-image-sample1")',
-      'box-shadow': 'none'
-    }).animate({'opacity': 1}, 300).children('i.fa').css('display', 'none')
+      'background-image': 'url("'+imageUrl+'")'
+    }).addClass('is-previewing').animate({'opacity': 1}, 300).children('i.fa').css('display', 'none')
     
   $('.p-book__search-person-list-item').on 'click', (e) ->
     selectThePerson(e)
