@@ -23,10 +23,10 @@
   border-color: $status-color-lending;
   color: $status-color-lending;
 }
-.c-book__status--returning {
-  background-color: $status-color-returning;
-  border-color: $status-color-returning;
-  color: $status-color-returning;
+.c-book__status--returned {
+  background-color: $status-color-returned;
+  border-color: $status-color-returned;
+  color: $status-color-returned;
 }
 .c-book__status--fill {
   color: white;

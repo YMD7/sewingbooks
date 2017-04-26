@@ -44,7 +44,6 @@ list.each_with_index do |(list),i|
     :book_cover       => open("#{Rails.root}/db/seeds/#{list['book_cover']}")
   }
   p attr
-  break
   addbook(attr)
 end
 

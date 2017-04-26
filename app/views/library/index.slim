@@ -6,73 +6,36 @@ section.l-main.p-home
         button.c-button.p-home__button-show-register-book-panel
           | 新しい本を登録
       ol.c-list
-        li.c-list__list-item.c-list__list-item--large-padding.p-index-books__list-item
-          = link_to '#', :class => 'c-list__list-item-inner c-list__list-item-inner-flex-row c-list__list-item-inner--large-padding' do
-            .l-flex-column.l-flex-col-1.l-flex-cc.p-index-books__icon-container
-              = image_tag 'profile-image-sample1.jpg', :class => 'u-fit-to-box'
-            .l-flex-column.l-flex-col-4
-              .l-flex-row.l-flex-row-1.l-flex-align-item-center
-                span.c-book__id
-                  | No.0001
-                span.c-book__status.c-book__status--lending.c-book__status--fill
-                  | 貸出中
+        - @books.each do |book|
+          li.c-list__list-item.c-list__list-item--large-padding.p-index-books__list-item
+            = link_to '#', :class => 'c-list__list-item-inner c-list__list-item-inner-flex-row c-list__list-item-inner--large-padding' do
+              .l-flex-column.l-flex-col-1.l-flex-cc.p-index-books__icon-container
+                = image_tag "/uploads/book_cover/#{book.id}/cover-image.png", :class => 'u-fit-to-box'
               .l-flex-column.l-flex-col-4
-                h3.c-book__title
-                  | 女の一生
-                span.c-book__author
-                  | モーパッサン
-              .l-flex-row.l-flex-row-1.l-flex-align-item-end
-                span.c-member__name
-                  | 川上洋平さん
-                span.c-member__affiliate
-                  | （営業チーム）
-            .c-list__list-hidden-menu.c-list__list-hidden-menu-lending
-              p.c-list__list-hidden-menu-item
-                | 返却
-        li.c-list__list-item.c-list__list-item--large-padding.p-index-books__list-item
-          = link_to '#', :class => 'c-list__list-item-inner c-list__list-item-inner-flex-row c-list__list-item-inner--large-padding' do
-            .l-flex-column.l-flex-col-1.l-flex-cc.p-index-books__icon-container
-              = image_tag 'profile-image-sample2.jpg', :class => 'u-fit-to-box'
-            .l-flex-column.l-flex-col-4
-              .l-flex-row.l-flex-row-1.l-flex-align-item-center
-                span.c-book__id
-                  | No.0002
-              .l-flex-column.l-flex-col-4
-                h3.c-book__title
-                  | 人間とマンボウ
-                span.c-book__author
-                  | モーパッサン
-              .l-flex-row.l-flex-row-1.l-flex-align-item-end
-                span.c-member__name
-                  | 石井大輔さん
-                span.c-member__affiliate
-                  | （法務チーム）
-            .c-list__list-hidden-menu.c-list__list-hidden-menu-returning
-              p.c-list__list-hidden-menu-item
-                | 貸出
-        li.c-list__list-item.c-list__list-item--large-padding.p-index-books__list-item
-          = link_to '#', :class => 'c-list__list-item-inner c-list__list-item-inner-flex-row c-list__list-item-inner--large-padding' do
-            .l-flex-column.l-flex-col-1.l-flex-cc.p-index-books__icon-container
-              = image_tag 'profile-image-sample3.jpg', :class => 'u-fit-to-box'
-            .l-flex-column.l-flex-col-4
-              .l-flex-row.l-flex-row-1.l-flex-align-item-center
-                span.c-book__id
-                  | No.0003
-                span.c-book__status.c-book__status--lending.c-book__status--fill
-                  | 貸出中
-              .l-flex-column.l-flex-col-4
-                h3.c-book__title
-                  | 風にそよぐ葦
-                span.c-book__author
-                  | 石川達三
-              .l-flex-row.l-flex-row-1.l-flex-align-item-end
-                span.c-member__name
-                  | 尾崎渉さん
-                span.c-member__affiliate
-                  | （経理第１チーム）
-            .c-list__list-hidden-menu.c-list__list-hidden-menu-lending
-              p.c-list__list-hidden-menu-item
-                | 返却
+                .l-flex-row.l-flex-row-1.l-flex-align-item-center
+                  span.c-book__id
+                    = "No.#{format("%04d", book.id)}"
+                  - if book.status == "lending"
+                    span.c-book__status.c-book__status--lending.c-book__status--fill
+                      | 貸出中
+                .l-flex-column.l-flex-col-4
+                  h3.c-book__title
+                    = "#{book.name}"
+                  span.c-book__author
+                    = "#{book.author}"
+                .l-flex-row.l-flex-row-1.l-flex-align-item-end
+                  span.c-member__name
+                    = "#{@users.find(book.recommended_by).name}"
+                  span.c-member__affiliate
+                    = "（#{@users.find(book.recommended_by).dept}）"
+              - if book.status == "lending"
+                .c-list__list-hidden-menu.c-list__list-hidden-menu-lending
+                  p.c-list__list-hidden-menu-item
+                    | 返却
+              - else
+                .c-list__list-hidden-menu.c-list__list-hidden-menu-returned
+                  p.c-list__list-hidden-menu-item
+                    | 貸出
     .l-main--2columns
       h2.c-header2
         | みんなの本活状況
@@ -93,7 +56,7 @@ section.l-main.p-home
           .c-list__list-item-inner.c-list__list-item-inner-flex-column
             .l-flex-row.l-flex-row-2.l-flex-align-item-end
               .l-flex-row.l-flex-row-1.l-flex-align-item-start
-                span.c-book__status.c-book__status--returning.c-book__status--border
+                span.c-book__status.c-book__status--returned.c-book__status--border
                   | 返却
               .l-float-right
                 span.c-activity__date

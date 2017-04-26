@@ -2,8 +2,9 @@ class LibraryController < ApplicationController
   before_action :create_type?, only: [:create]
 
   def index
-    @book = Book.new
-    @user = User.new
+    @book  = Book.new
+    @books = Book.all
+    @user  = User.new
     @users = User.all
   end
 

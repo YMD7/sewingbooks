@@ -122,9 +122,9 @@
   @include transition(all 0.15s ease-out);
 }
 .c-list__list-hidden-menu-lending::after {
-  border: 1px solid $status-color-returning;
+  border: 1px solid $status-color-returned;
 }
-.c-list__list-hidden-menu-returning::after {
+.c-list__list-hidden-menu-returned::after {
   border: 1px solid $status-color-lending;
 }
 .c-list__list-hidden-menu-item {
