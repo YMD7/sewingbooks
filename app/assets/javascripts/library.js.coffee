@@ -45,9 +45,9 @@ ready = ->
     i = $(e.target).children('i')
     i.toggleClass('fa-file-image-o')
     i.toggleClass('fa-plus-circle')
-  $('.p-books__show-portlait-image-placeholder').on 'mouseenter', (e) ->
+  $('.p-books__show-portrait-image-placeholder').on 'mouseenter', (e) ->
     toggleImageIcon(e)
-  $('.p-books__show-portlait-image-placeholder').on 'mouseleave', (e) ->
+  $('.p-books__show-portrait-image-placeholder').on 'mouseleave', (e) ->
     toggleImageIcon(e)
 
   # ----------------------------------------
@@ -107,10 +107,10 @@ ready = ->
       span.text("画像じゃないようです")
       false
 
-  $('.p-books__show-portlait-image-container > input[type="file"]').on 'change', (input) ->
+  $('.p-books__show-portrait-image-container > input[type="file"]').on 'change', (input) ->
     selectFile(input)
 
-  $('.p-books__show-portlait-image-placeholder').on 'click', ->
+  $('.p-books__show-portrait-image-placeholder').on 'click', ->
     $(this).siblings('input[type="file"]').click()
 
   togglePersonFinder = () ->
@@ -133,7 +133,7 @@ ready = ->
         panel.addClass('is-show')
       )
 
-  $('.p-books__show-person .p-books__show-portlait-image-container').on 'click', (e) ->
+  $('.p-books__show-person .p-books__show-portrait-image-container').on 'click', (e) ->
     togglePersonFinder()
 
   $('.l-main__search-person-container-control-buttons .c-button__panel-close').on 'click', (e) ->
@@ -155,9 +155,9 @@ ready = ->
 
     # ターゲットに情報を設定
     $('.p-books__persion-id').val(id)
-    $('.p-books__show-person .p-books__show-portlaits-name').val(name)
+    $('.p-books__show-person .p-books__show-portraits-name').val(name)
     $('.p-books__show-person .p-books__show-relevant-name').val(dept)
-    $('.p-books__show-person .p-books__show-portlait-image-placeholder').css({
+    $('.p-books__show-person .p-books__show-portrait-image-placeholder').css({
       'opacity': 0,
       'background-image': 'url("'+imageUrl+'")'
     }).addClass('is-previewing').animate({'opacity': 1}, 300).children('i.fa').css('display', 'none')
