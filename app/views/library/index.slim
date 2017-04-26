@@ -8,7 +8,7 @@ section.l-main.p-home
       ol.c-list
         - @books.each do |book|
           li.c-list__list-item.c-list__list-item--large-padding.p-index-books__list-item
-            = link_to '#', :class => 'c-list__list-item-inner c-list__list-item-inner-flex-row c-list__list-item-inner--large-padding' do
+            = link_to "books/#{book.id}", :class => 'c-list__list-item-inner c-list__list-item-inner-flex-row c-list__list-item-inner--large-padding' do
               .l-flex-column.l-flex-col-1.l-flex-cc.p-index-books__icon-container
                 = image_tag "/uploads/book_cover/#{book.id}/cover-image.png", :class => 'u-fit-to-box'
               .l-flex-column.l-flex-col-4

@@ -2,55 +2,57 @@ section.l-main.p-books__show
   nav.l-main__local-navi
     .l-main__local-navi-wrapper.l-wrapper
       .l-main__local-navi-cell
-        = link_to '/', :class => 'c-navi__link-to-adjacent-books c-navi__link-to-prev-book l-flex-row l-flex-content-justify-start' do
-          .c-navi__local-navi-text-container.l-flex-column.l-flex-align-item-start
-            span.c-navi__local-navi-member-name-label
-              | 山田響さんのおすすめ本
-            span.c-navi__local-navi-book-name-label
-              | すべてがＦになる
+        - if @prev_book
+          = link_to "#{@prev_book.id}", :class => 'c-navi__link-to-adjacent-books c-navi__link-to-prev-book l-flex-row l-flex-content-justify-start' do
+            .c-navi__local-navi-text-container.l-flex-column.l-flex-align-item-start
+              span.c-navi__local-navi-member-name-label
+                = "#{@users.find(@prev_book.recommended_by).name}さん のおすすめ本"
+              span.c-navi__local-navi-prev-book.c-navi__local-navi-book-name-label
+                = "#{@prev_book.name}"
       .l-main__local-navi-cell.l-main__local-navi-link-to-top
         = link_to 'トップページへ戻る', '/', :class => 'c-button__link-to c-button__link-to-top'
       .l-main__local-navi-cell
-        = link_to '/', :class => 'c-navi__link-to-adjacent-books c-navi__link-to-next-book l-flex-row l-flex-content-justify-end' do
-          .c-navi__local-navi-text-container.l-flex-column.l-flex-align-item-end
-            span.c-navi__local-navi-member-name-label
-              | 石井大輔さんのおすすめ本
-            span.c-navi__local-navi-book-name-label
-              | ちょっとピンぼけ
+        - if @next_book
+          = link_to "#{@next_book.id}", :class => 'c-navi__link-to-adjacent-books c-navi__link-to-next-book l-flex-row l-flex-content-justify-end' do
+            .c-navi__local-navi-text-container.l-flex-column.l-flex-align-item-end
+              span.c-navi__local-navi-next-book.c-navi__local-navi-member-name-label
+                = "#{@users.find(@next_book.recommended_by).name}さん のおすすめ本"
+              span.c-navi__local-navi-next-book.c-navi__local-navi-book-name-label
+                = "#{@next_book.name}"
   .p-books__show-introduction.l-wrapper-narrow
-    .p-books__show-introduction-portlaits-wrapper
+    .p-books__show-introduction-portraits-wrapper
       .p-books__show-person
-        .p-books__show-portlait
-          .p-books__show-portlait-image-container
-            = image_tag 'profile-image-sample1.jpg'
+        .p-books__show-portrait
+          .p-books__show-portrait-image-container
+            = image_tag "/uploads/portrait/#{@book.recommended_by}/portrait.png"
         .p-books__show-name-outer
           span.p-books__show-name-label
             | おすすめした人
           .p-books__show-person-name-wrapper
-            span.p-books__show-portlaits-name
-              | 川上洋平
+            span.p-books__show-portraits-name
+              = "#{@users.find(@book.recommended_by).name}"
             span.p-books__show-person-name-san
               | さん
           span.p-books__show-relevant-name
-            | 第一営業部
+            = "#{@users.find(@book.recommended_by).dept}"
       .p-books__show-book
-        .p-books__show-portlait
-          .p-books__show-portlait-image-container
-            = image_tag 'book-portlait-sample.jpg'
+        .p-books__show-portrait
+          .p-books__show-portrait-image-container
+            = image_tag "/uploads/book_cover/#{@book.id}/cover-image.png"
         .p-books__show-name-outer
           span.p-books__show-name-label
             | おすすめの本
-          span.p-books__show-portlaits-name
-            | 月と菓子パン
+          span.p-books__show-portraits-name
+            = @book.name
           span.p-books__show-relevant-name
-            | 石田千
+            = @book.author
     .p-books__show-comment
       .p-books__show-comment-body
         p
-          | いまの仕事に就くきっかけになった一冊です。
+          = @book.comment
       .p-books__show-comment-date
         span
-          | 2016/05/04
+          = @book.recommended_date
     .p-books__show-book-card
       span.p-books__show-book-card-header
         | 図書カード

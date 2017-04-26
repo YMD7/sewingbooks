@@ -4,11 +4,11 @@
       | 本の登録
     button.l-main__float-panel-close-button.c-button__panel-close
       = image_tag 'close-cross.svg'
-  .p-books__show-introduction-portlaits-wrapper
+  .p-books__show-introduction-portraits-wrapper
     .p-books__show-book
-      .p-books__show-portlait
-        .p-books__show-portlait-image-container
-          .p-books__show-portlait-image-placeholder
+      .p-books__show-portrait
+        .p-books__show-portrait-image-container
+          .p-books__show-portrait-image-placeholder
             i.fa.fa-file-image-o
             span
             img
@@ -16,7 +16,7 @@
       .p-books__show-name-outer
         span.p-books__show-name-label
           | 氏名
-        = f.text_field :name, :class => 'p-books__show-portlaits-name'
+        = f.text_field :name, :class => 'p-books__show-portraits-name'
         span.p-books__show-name-label
           | 所属
         = f.text_field :dept, :class => 'p-books__show-relevant-name'
