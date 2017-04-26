@@ -13,7 +13,7 @@
   font-size: 12px;
 }
 .p-index-books__list-item {
-  height: $WIDTH__p-index-books__list-item; // 140px
+  padding: ($STD * 1) 0;
 }
 .p-index-books__icon-container {
   background-color: beige;

@@ -26,6 +26,7 @@ section.l-main.p-home
                 .l-flex-row.l-flex-row-1.l-flex-align-item-end
                   span.c-member__name
                     = "#{@users.find(book.recommended_by).name}"
+                    span.c-member__name-honorific さん
                   span.c-member__affiliate
                     = "（#{@users.find(book.recommended_by).dept}）"
               - if book.status == "lending"
