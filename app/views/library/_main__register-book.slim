@@ -1,4 +1,5 @@
 = form_for @book, :url => { :action => 'create' }, :html => { :class => ["l-main__float-panel", "p-home__admin-register-book"], :style => "display: none;" } do |f|
+  = f.hidden_field :recommended_by
   .l-main__float-panel-control-buttons
     button.l-main__float-panel-switch-button
       | ユーザーの登録

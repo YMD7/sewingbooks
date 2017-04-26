@@ -150,6 +150,9 @@ ready = ->
     name = textContainer.children('span:first-child').text()
     dept = textContainer.children('span:last-child').text()
 
+    # @book.recommended_byにユーザーidを設定
+    $('#book_recommended_by').val(id)
+
     # ターゲットに情報を設定
     $('.p-books__persion-id').val(id)
     $('.p-books__show-person .p-books__show-portlaits-name').val(name)
