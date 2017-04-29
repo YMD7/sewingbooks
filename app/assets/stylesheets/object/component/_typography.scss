@@ -4,11 +4,16 @@
 // -- + header + -------------
 .c-header2 {
   @include display(flex);
-  @include align-items(center);
+  @include align-items(flex-end);
   
   height: $STD * 5;
   margin-bottom: $STD * 2;
   color: $COLOR__c-header2;
   font-size: $base-font-size * 1.2;
   font-weight: normal;
+
+  > small {
+    color: #999;
+    font-size: 60%;
+  }
 }

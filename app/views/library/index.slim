@@ -42,41 +42,21 @@ section.l-main.p-home
     .l-main--2columns
       h2.c-header2
         | みんなの本活状況
+        small （最新の5件）
       ol.c-list
-        li.c-list__list-item
-          .c-list__list-item-inner.c-list__list-item-inner-flex-column
-            .l-flex-row.l-flex-row-2.l-flex-align-item-end
-              .l-flex-row.l-flex-row-1.l-flex-align-item-start
-                span.c-book__status.c-book__status--lending.c-book__status--border
-                  | 貸出中
-              .l-float-right
-                span.c-activity__date
-                  | 2016/05/01
-            .l-flex-row.l-flex-row-4
-              p.c-activity__message
-                | モーパッサンの「女の一生」が貸し出されました
-        li.c-list__list-item
-          .c-list__list-item-inner.c-list__list-item-inner-flex-column
-            .l-flex-row.l-flex-row-2.l-flex-align-item-end
-              .l-flex-row.l-flex-row-1.l-flex-align-item-start
-                span.c-book__status.c-book__status--returned.c-book__status--border
-                  | 返却
-              .l-float-right
-                span.c-activity__date
-                  | 2016/04/24
-            .l-flex-row.l-flex-row-4
-              p.c-activity__message
-                | 藤沢道郎の「物語イタリアの歴史―解体から統一まで」が返却されました
-        li.c-list__list-item
-          .c-list__list-item-inner.c-list__list-item-inner-flex-column
-            .l-flex-row.l-flex-row-2.l-flex-align-item-end
-              .l-flex-row.l-flex-row-1.l-flex-align-item-start
-                span.c-book__status.c-book__status--lending.c-book__status--border
-                  | 貸出中
-              .l-float-right
-                span.c-activity__date
-                  | 2016/04/11
-            .l-flex-row.l-flex-row-4
-              p.c-activity__message
-                | サン・テグジュペリの「人間の大地」が貸し出されました
+        - @acts.order("updated_at DESC").each_with_index do |act, i|
+          - message = act.status == "lending" ? "貸し出されました" : "返却されました"
+          li.c-list__list-item
+            .c-list__list-item-inner.c-list__list-item-inner-flex-column
+              .l-flex-row.l-flex-row-2.l-flex-align-item-end
+                .l-flex-row.l-flex-row-1.l-flex-align-item-start
+                  = content_tag :span, :class => "c-book__status c-book__status--#{act.status} c-book__status--border"
+                    = message
+                .l-float-right
+                  span.c-activity__date
+                    = act.updated_at.in_time_zone('Tokyo').strftime("%Y/%m/%d")
+              = link_to "books/#{act.book}", :class => "c-list__list-item-link l-flex-row l-flex-row-4"
+                p.c-activity__message
+                  = "#{@books.find(act.book).author}の「#{@books.find(act.book).name}」が#{message}"
+          - if i > 3 then break
 = render :partial => 'main__float-panel'

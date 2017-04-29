@@ -64,6 +64,13 @@
     border: 1px solid $medium-gray;
   }
 }
+.c-list__list-item-link {
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
 .c-list__list-item-inner {
   @include display(flex);
 

@@ -6,6 +6,7 @@ class LibraryController < ApplicationController
     @books = Book.all
     @user  = User.new
     @users = User.all
+    @acts  = Activity.all
   end
 
   def create
@@ -37,6 +38,11 @@ class LibraryController < ApplicationController
   def update_book
     book = Book.find(params[:book][:id])
     book.update_attribute(:status, params[:book][:status])
+    Activity.create({
+      :status => params[:book][:status],
+      :book   => params[:book][:id],
+      :user   => "",
+    })
     redirect_to action: 'index'
   end
 
