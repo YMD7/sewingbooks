@@ -1,5 +1,5 @@
 class LibraryController < ApplicationController
-  before_action :create_type?, only: [:create]
+  before_action :create_type?, only: [:create, :update_book]
 
   def index
     @book  = Book.new
@@ -32,6 +32,12 @@ class LibraryController < ApplicationController
     User.accept_invitation!(:invitation_token => token, :password => 'sewingbooks_2017', :password_confirmation => 'sewingbooks_2017')
 
     @user.save
+  end
+
+  def update_book
+    book = Book.find(params[:book][:id])
+    book.update_attribute(:status, params[:book][:status])
+    redirect_to action: 'index'
   end
 
   private

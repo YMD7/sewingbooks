@@ -6,37 +6,39 @@ section.l-main.p-home
         button.c-button.p-home__button-show-register-book-panel
           | 新しい本を登録
       ol.c-list
-        - @books.each do |book|
-          li.c-list__list-item.c-list__list-item--large-padding.p-index-books__list-item
-            = link_to "books/#{book.id}", :class => 'c-list__list-item-inner c-list__list-item-inner-flex-row c-list__list-item-inner--large-padding' do
-              .l-flex-column.l-flex-col-1.l-flex-cc.p-index-books__icon-container
-                = image_tag "/uploads/book_cover/#{book.id}/cover-image.png", :class => 'u-fit-to-box'
-              .l-flex-column.l-flex-col-4
-                .l-flex-row.l-flex-row-1.l-flex-align-item-center
-                  span.c-book__id
-                    = "No.#{format("%04d", book.id)}"
-                  - if book.status == "lending"
-                    span.c-book__status.c-book__status--lending.c-book__status--fill
-                      | 貸出中
-                .l-flex-column.l-flex-col-4
-                  h3.c-book__title
-                    = "#{book.name}"
-                  span.c-book__author
-                    = "#{book.author}"
-                .l-flex-row.l-flex-row-1.l-flex-align-item-end
-                  span.c-member__name
-                    = "#{@users.find(book.recommended_by).name}"
-                    span.c-member__name-honorific さん
-                  span.c-member__affiliate
-                    = "（#{@users.find(book.recommended_by).dept}）"
-              - if book.status == "lending"
-                .c-list__list-hidden-menu.c-list__list-hidden-menu-lending
-                  p.c-list__list-hidden-menu-item
-                    | 返却
-              - else
-                .c-list__list-hidden-menu.c-list__list-hidden-menu-returned
-                  p.c-list__list-hidden-menu-item
-                    | 貸出
+          - @books.each do |book|
+              li.c-list__list-item.c-list__list-item--large-padding.p-index-books__list-item
+                = form_for @book, :url => { :action => 'update_book' } do |f|
+                  = f.hidden_field :id, :value => book.id
+                  = link_to "books/#{book.id}", :class => 'c-list__list-item-inner c-list__list-item-inner-flex-row c-list__list-item-inner--large-padding' do
+                    .l-flex-column.l-flex-col-1.l-flex-cc.p-index-books__icon-container
+                      = image_tag "/uploads/book_cover/#{book.id}/cover-image.png", :class => 'u-fit-to-box'
+                    .l-flex-column.l-flex-col-4
+                      .l-flex-row.l-flex-row-1.l-flex-align-item-center
+                        span.c-book__id
+                          = "No.#{format("%04d", book.id)}"
+                        - if book.status == "lending"
+                          span.c-book__status.c-book__status--lending.c-book__status--fill
+                            | 貸出中
+                      .l-flex-column.l-flex-col-4
+                        h3.c-book__title
+                          = "#{book.name}"
+                        span.c-book__author
+                          = "#{book.author}"
+                      .l-flex-row.l-flex-row-1.l-flex-align-item-end
+                        span.c-member__name
+                          = "#{@users.find(book.recommended_by).name}"
+                          span.c-member__name-honorific さん
+                        span.c-member__affiliate
+                          = "（#{@users.find(book.recommended_by).dept}）"
+                    = button_tag :class => "c-list__list-hidden-menu c-list__list-hidden-menu-#{book.status}"
+                      p.c-list__list-hidden-menu-item
+                        - if book.status == "lending"
+                          | 返却
+                          = f.hidden_field :status, :value => 'returned'
+                        - else
+                          | 貸出
+                          = f.hidden_field :status, :value => 'lending'
     .l-main--2columns
       h2.c-header2
         | みんなの本活状況

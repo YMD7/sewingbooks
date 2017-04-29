@@ -96,11 +96,16 @@
 
   position: relative;
   opacity: 0;
+  border-radius: none;
   background-color: #eee;
+  padding: 0;
+  color: #333;
+  font-weight: normal;
   @include transition(all 0.40s $ease-out-sine);
 
   &:hover {
     background-color: #f9f9f9;
+    color: #333;
 
     &::after {
       opacity: 1;
