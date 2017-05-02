@@ -1,49 +1,49 @@
 - name: "廃墟遺産 ARCHIFLOP"
   author: "アレッサンドロ・ビアモンティ"
   status: "lending"
-  recommended_by: 28
+  recommended_by: 1
   comment: "なぜプロジェクトの未来について、事前に想定しておくことができないのか？という視点で読んでいました。"
   recommended_date: "2016-04-26"
   book_cover: "book-1.jpg"
 - name: "ジャングルの極限レースを走った犬 アーサー"
   author: "ミカエル リンドノード"
   status: "returned"
-  recommended_by: 29
+  recommended_by: 2
   comment: "人と犬の絆を伝える実話ですが、こういうのに弱いひとは必読ですね（笑）"
   recommended_date: "2016-05-03"
   book_cover: "book-2.jpg"
 - name: "情報と秩序:原子から経済までを動かす根本原理を求めて"
   author: "セザー・ ヒダルゴ"
   status: "returned"
-  recommended_by: 30
+  recommended_by: 3
   comment: "ちょっと背伸びして手にとってみた本。難しすぎてほとんどわからなかった・・・"
   recommended_date: "2016-03-16"
   book_cover: "book-3.jpg"
 - name: "太陽王ルイ14世 ヴェルサイユの発明者"
   author: "鹿島 茂"
   status: "returned"
-  recommended_by: 31
+  recommended_by: 4
   comment: "フランスの豪華絢爛な時代をつくった人の話し。ほんとにこんな時代があったんだなぁと、しみじみ読みました。"
   recommended_date: "2016-04-11"
   book_cover: "book-4.jpg"
 - name: "色という奇跡: 母・ふくみから受け継いだもの"
   author: "志村 洋子"
   status: "lending"
-  recommended_by: 32
+  recommended_by: 5
   comment: "仕事のプロジェクトで調査のために図書館で手にとりました。日本の伝統を見直す機会になった本です。"
   recommended_date: "2016-05-10"
   book_cover: "book-5.jpg"
 - name: "字が汚い!"
   author: "新保 信長"
   status: "lending"
-  recommended_by: 33
+  recommended_by: 6
   comment: "ずっとパソコンを使う生活をしていると、ふとした時に自分の字のヘタさにビビることありますよね。"
   recommended_date: "2016-05-15"
   book_cover: "book-6.jpg"
 - name: "チャップリン自伝: 若き日々"
   author: "チャールズ チャップリン"
   status: "lending"
-  recommended_by: 34
+  recommended_by: 7
   comment: "高校の社会の授業で観たのが初めてだったんですが、今回きちんと彼のことを知れてよかったです。"
   recommended_date: "2016-04-07"
   book_cover: "book-7.jpg"
