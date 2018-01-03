@@ -3,8 +3,10 @@ worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 timeout 15
 preload_app true # 更新時ダウンタイム無し
 
-listen "/share/unicorn.sock"
-pid "/share/unicorn.pid"
+#listen "/share/unicorn.sock"
+#pid "/share/unicorn.pid"
+listen "/usr/share/nginx/dev/sewingbooks/tmp/unicorn.sock"
+pid "/usr/share/nginx/dev/sewingbooks/tmp/unicorn.pid"
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do
